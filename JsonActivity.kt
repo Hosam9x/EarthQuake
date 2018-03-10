@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.item_earth_quake.view.*
 import org.json.JSONObject
 import java.io.File
 import java.io.InputStream
@@ -74,9 +75,7 @@ class EarthQuakeListAdapter(val context: Context, private val list: MutableList<
                 }
 
                 itemView.magnitude.text = earthQuake.mag.toString()
-                itemView.placeTextView.text = earthQuake.place
                 itemView.date.text = earthQuake.getDate()
-                itemView.urlTextView.text = earthQuake.url
                 itemView.primary_location.setText(primaryLocation)
                 itemView.location_offset.setText(locationOffset)
             }
