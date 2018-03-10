@@ -13,12 +13,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Hosamo on 01/03/18.
- */
-
-
-
 public class WordAdapter extends ArrayAdapter<Word> {
 
     private int mColorResourceId;
