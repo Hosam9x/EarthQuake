@@ -13,4 +13,5 @@ class EarthQuake(var mag: Double, var place: String, var time :Long, var url : S
         val dateFormatter = SimpleDateFormat("MMM DD, yyyy")
         return dateFormatter.format(date)
     }
+
 }

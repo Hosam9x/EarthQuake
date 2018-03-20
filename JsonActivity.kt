@@ -12,6 +12,9 @@ import kotlinx.android.synthetic.main.item_earth_quake.view.*
 import org.json.JSONObject
 import java.io.File
 import java.io.InputStream
+import android.support.v4.content.ContextCompat
+import java.security.AccessController.getContext
+
 
 class JsonActivity : AppCompatActivity() {
 
@@ -80,5 +83,23 @@ class EarthQuakeListAdapter(val context: Context, private val list: MutableList<
                 itemView.location_offset.setText(locationOffset)
             }
         }
+    }
+
+    private fun getMagnitudeColor(magnitude: Double): Int {
+        val magnitudeColorResourceId: Int
+        val magnitudeFloor = Math.floor(magnitude).toInt()
+        when (magnitudeFloor) {
+            0, 1 -> magnitudeColorResourceId = R.color.magnitude1
+            2 -> magnitudeColorResourceId = R.color.magnitude2
+            3 -> magnitudeColorResourceId = R.color.magnitude3
+            4 -> magnitudeColorResourceId = R.color.magnitude4
+            5 -> magnitudeColorResourceId = R.color.magnitude5
+            6 -> magnitudeColorResourceId = R.color.magnitude6
+            7 -> magnitudeColorResourceId = R.color.magnitude7
+            8 -> magnitudeColorResourceId = R.color.magnitude8
+            9 -> magnitudeColorResourceId = R.color.magnitude9
+            else -> magnitudeColorResourceId = R.color.magnitude10plus
+        }
+        return ContextCompat.getColor(context, magnitudeColorResourceId)
     }
 }

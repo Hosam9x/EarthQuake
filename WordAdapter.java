@@ -53,7 +53,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else {
             imageView.setVisibility(View.GONE);
         }
-        int color= ContextCompat.getColor(getContext(),mColorResourceId);
+       // int color= ContextCompat.getColor(getContext(),mColorResourceId);
         return listItemView;
     }
 }
